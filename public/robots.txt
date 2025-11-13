@@ -1,0 +1,18 @@
+User-agent: *
+Disallow: /*.swf
+Clean-param: utm&from&gclid&yclid&ymclid&tid&yadclid&openstat&etext&type
+Allow: /*.jpg
+Allow: /*.js
+Allow: /*.css
+Allow: /*.png
+Allow: /*.jpeg
+
+User-agent: Googlebot
+Disallow: /*.swf
+Allow: /*.jpg
+Allow: /*.js
+Allow: /*.css
+Allow: /*.png
+Allow: /*.jpeg
+
+Sitemap: https://reffection.ru/sitemap.xml
