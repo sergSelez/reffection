@@ -1,12 +1,14 @@
 'use client';
-import cls from './Header.module.scss';
+import './Header.scss';
 import { useMediaQuery } from 'react-responsive';
-import { useRouter, usePathname } from 'next/navigation';
 import BtnLink from '../utilities/Btn/BtnLink';
 import { useEffect, useRef, useState } from 'react';
 import ModalMenu from '../utilities/Modals/ModalMenu/ModalMenu';
-import { HashLink as Link } from 'react-router-hash-link';
-import CityBlock from '../utilities/CityBlock/CityBlock';
+// import { HashLink as Link } from 'react-router-hash-link';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+// import { useLocation } from 'react-router-dom';
+// import CityBlock from '../utilities/CityBlock/CityBlock';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
@@ -14,8 +16,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 function Header({ activeMenu, overflowActiveMenu }) {
   const [modalIsOpen, setIsOpen] = useState(false);
-  const location = useRouter();
-  const pathname = usePathname();
+  const location = usePathname();
   const subMenuRef = useRef(null);
   const isMobile = useMediaQuery({ query: '(max-width: 767px)' });
   const btnRef = useRef(null); // Ссылка на кнопку
@@ -47,12 +48,12 @@ function Header({ activeMenu, overflowActiveMenu }) {
   const routesChangeColor = ['/kitchens', '/kitchens/'];
 
   useEffect(() => {
-    if (routesChangeColor.includes(pathname)) {
-      setTelegramClassBtn(pathname.replace(/\//g, ''));
+    if (routesChangeColor.includes(location)) {
+      setTelegramClassBtn(location.replace(/\//g, ''));
     } else {
       setTelegramClassBtn('');
     }
-  }, [pathname]);
+  }, [location]);
 
   function openModal() {
     setIsOpen(true);
@@ -71,10 +72,10 @@ function Header({ activeMenu, overflowActiveMenu }) {
 
   // Получем текущую ссылку
   const isActiveLink = (path) => {
-    return pathname === path;
+    return location === path;
   };
 
-  const isMain = pathname === '/';
+  const isMain = location === '/';
 
   // Выпадающее меню
   const handleClick = (e) => {
@@ -88,39 +89,39 @@ function Header({ activeMenu, overflowActiveMenu }) {
   };
 
   // Отслеживаем изменение ссылки для sunMenu
-  // useEffect(() => {
-  //   if (subMenuRef.current && btnRef.current) {
-  //     subMenuRef.current.classList.remove('active');
-  //     btnRef.current.classList.remove('active');
-  //   }
-  // }, [pathname]); // Срабатывает при изменении pathname
+  useEffect(() => {
+    if (subMenuRef.current && btnRef.current) {
+      subMenuRef.current.classList.remove('active');
+      btnRef.current.classList.remove('active');
+    }
+  }, [location]); // Срабатывает при изменении location.pathname
 
   // Закрытие списка по клику вне
-  // const handleClickOutside = (event) => {
-  //   // Проверяем, был ли клик вне блока И вне кнопки-триггера
-  //   if (
-  //     subMenuRef.current &&
-  //     !subMenuRef.current.contains(event.target) &&
-  //     btnRef.current &&
-  //     !btnRef.current.contains(event.target)
-  //   ) {
-  //     subMenuRef.current.classList.remove('active');
-  //     btnRef.current.classList.remove('active');
-  //   }
-  // };
+  const handleClickOutside = (event) => {
+    // Проверяем, был ли клик вне блока И вне кнопки-триггера
+    if (
+      subMenuRef.current &&
+      !subMenuRef.current.contains(event.target) &&
+      btnRef.current &&
+      !btnRef.current.contains(event.target)
+    ) {
+      subMenuRef.current.classList.remove('active');
+      btnRef.current.classList.remove('active');
+    }
+  };
 
-  // useEffect(() => {
-  //   document.addEventListener('mousedown', handleClickOutside);
+  useEffect(() => {
+    document.addEventListener('mousedown', handleClickOutside);
 
-  //   return () => {
-  //     document.removeEventListener('mousedown', handleClickOutside);
-  //   };
-  // }, []);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
 
   return (
-    <header className={`${cls.header} ${!allowedRoutes.includes(pathname) ? 'white' : ''}`} ref={headerRef}>
-      <div className={cls.header_wrap}>
-        <Link to="/" className={cls['header_wrap-logo']} aria-label="Логотип">
+    <header className={`header ${!allowedRoutes.includes(location) ? 'white' : ''}`} ref={headerRef}>
+      <div className="header_wrap">
+        <Link href="/" className="header_wrap-logo" aria-label="Логотип">
           <svg xmlns="http://www.w3.org/2000/svg" width={232} height={25} viewBox="0 0 232 25" fill="none">
             <path
               fillRule="evenodd"
@@ -130,60 +131,60 @@ function Header({ activeMenu, overflowActiveMenu }) {
             />
           </svg>
         </Link>
-        <nav className={cls.header_wrap_nav}>
+        <nav className={`header_wrap_nav`}>
           <ul>
-            <li className={cls.drops}>
+            <li className="drops">
               <button type="button" onClick={handleClick}>
                 продукты
-                <div className={cls.icon}>
+                <div className="icon">
                   <svg xmlns="http://www.w3.org/2000/svg" width="10" height="6" viewBox="0 0 10 6" fill="none">
                     <path d="M1 1L5 5L9 1" stroke="#121212" />
                   </svg>
                 </div>
               </button>
-              <ul className={cls['sub-menu']} ref={subMenuRef}>
+              <ul className="sub-menu" ref={subMenuRef}>
                 <li>
-                  <Link to="/product/segment-scoring">Segment Scoring</Link>
+                  <Link href="/product/segment-scoring">Segment Scoring</Link>
                 </li>
                 <li>
-                  <Link to="/product/retargeting-trigger-leads">Retargeting Trigger Leads</Link>
+                  <Link href="/product/retargeting-trigger-leads">Retargeting Trigger Leads</Link>
                 </li>
                 <li>
-                  <Link to="/product/call-center">Call Center</Link>
+                  <Link href="/product/call-center">Call Center</Link>
                 </li>
               </ul>
             </li>
             <li>
-              <Link to="/price" className={isActiveLink('/price') ? cls['current-link'] : ''}>
+              <Link href="/price" className={isActiveLink('/price') ? 'current-link' : ''}>
                 Стоимость
               </Link>
             </li>
             <li>
-              <a href="/blog" className={isActiveLink('/blog') ? cls['current-link'] : ''}>
+              <a href="/blog" className={isActiveLink('/blog') ? 'current-link' : ''}>
                 Блог
               </a>
             </li>
             <li>
-              <Link to="/partners" className={isActiveLink('/partners') ? cls['current-link'] : ''}>
+              <Link href="/partners" className={isActiveLink('/partners') ? 'current-link' : ''}>
                 Партнерам
               </Link>
             </li>
             <li>
-              <Link to="/contacts" className={isActiveLink('/contacts') ? 'current-link' : ''}>
+              <Link href="/contacts" className={isActiveLink('/contacts') ? 'current-link' : ''}>
                 Контакты
               </Link>
             </li>
           </ul>
         </nav>
-        <div className={cls.header_wrap_right}>
-          {!isMobile && <CityBlock />}
+        <div className="header_wrap_right">
+          {/* {!isMobile && <CityBlock />} */}
           <BtnLink
             link={`${isActiveLink('/partners') ? 'https://t.me/sibir_alexandr' : 'https://t.me/Reffection_corp'}`}
             label={'Telegram'}
             target={'_blank'}
-            className={`${cls['header_wrap_right-btn']} ${telegramClassBtn}`}
+            className={`header_wrap_right-btn ${telegramClassBtn}`}
           >
-            <div className={cls.icon}>
+            <div className="icon">
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
                 <path
                   d="M11.823 8.12506C12.0313 7.98617 12.1702 7.9688 12.2397 8.07297C12.3091 8.17714 12.257 8.31603 12.0834 8.48964C10.4688 10.1563 9.2709 11.0938 8.59381 11.8751C8.28131 12.2223 8.36811 12.5695 8.85423 12.9168L12.0834 15.1043C13.3855 15.9897 13.8022 15.2605 13.9584 14.3751C14.5487 11.2154 14.9654 8.59381 15.2084 6.51046C15.3126 5.72921 15.0522 5.31254 14.0626 5.62504C13.1251 5.90282 9.75701 7.30908 3.95836 9.84382C2.8646 10.2605 3.07294 10.7292 3.69794 10.9376C4.32295 11.1459 4.7917 11.3022 5.4167 11.4584C6.04171 11.6147 6.45838 11.6667 7.18755 11.198M10.0522 0C12.6998 0.01379 15.2339 1.07701 17.0988 2.95649C18.9636 4.83598 20.007 7.37831 20.0001 10.026C19.9932 12.6736 18.9366 15.2105 17.062 17.0802C15.1873 18.95 12.6477 20 10.0001 20C7.3524 20 4.81279 18.95 2.93817 17.0802C1.06354 15.2105 0.00692896 12.6736 3.39569e-05 10.026C-0.00686104 7.37831 1.03653 4.83598 2.90138 2.95649C4.76624 1.07701 7.30035 0.01379 9.94798 0"
@@ -198,14 +199,13 @@ function Header({ activeMenu, overflowActiveMenu }) {
               link={`https://lk.reffection.com/login`}
               label={'login'}
               target={'_blank'}
-              className={`${cls['header_wrap_right-btn']} ${cls['hheader_wrap_right-btn--login']}`}
+              className={`header_wrap_right-btn header_wrap_right-btn--login`}
             >
               Войти
             </BtnLink>
           )}
           {isMobile && (
-            // <button type="button" className={`header_wrap_right-burger btn light_gray`} onClick={() => openModal()}>
-            <button type="button" onClick={() => openModal()}>
+            <button type="button" className={`header_wrap_right-burger btn light_gray`} onClick={() => openModal()}>
               Меню
             </button>
           )}

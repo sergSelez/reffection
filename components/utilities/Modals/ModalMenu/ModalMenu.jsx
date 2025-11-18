@@ -1,10 +1,10 @@
 'use client';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import '../Modals.scss';
 import './ModalMenu.scss';
 import Modal from 'react-modal';
 import { useEffect, useRef } from 'react';
-import { useLocation } from 'react-router-dom';
+import { usePathname } from 'next/navigation';
 import CityBlock from '../../CityBlock/CityBlock';
 
 Modal.setAppElement('#root');
@@ -12,7 +12,7 @@ Modal.setAppElement('#root');
 function ModalMenu({ isOpen, onRequestClose }) {
   const subMenuRef = useRef(null);
   const btnRef = useRef(null); // Ссылка на кнопку
-  const location = useLocation();
+  const location = usePathname();
 
   const handleClick = (e) => {
     const thisMenu = subMenuRef.current;
@@ -39,7 +39,7 @@ function ModalMenu({ isOpen, onRequestClose }) {
   // Отслеживаем изменение ссылки
   useEffect(() => {
     onRequestClose();
-  }, [location.pathname]); // Срабатывает при изменении location.pathname
+  }, [location, onRequestClose]); // Срабатывает при изменении location.pathname
 
   return (
     <Modal

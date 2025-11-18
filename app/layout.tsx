@@ -7,8 +7,8 @@ import 'swiper/css/pagination';
 import 'bootstrap/dist/css/bootstrap-grid.min.css';
 import './globals.scss';
 
-import Preloader from '@/components/utilities/Preloader/Preloader';
-import Header from '@/components/Header/Header';
+// import Preloader from '@/components/utilities/Preloader/Preloader';
+// import Header from '@/components/Header/Header';
 import Footer from '@/components/Footer/Footer';
 import BtnTop from '@/components/utilities/BtnTop/BtnTop';
 import ScrollToHash from '@/components/utilities/ScrollToHash/ScrollToHash';
@@ -166,7 +166,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${perfograma.variable} ${onest.variable} ${ibm.variable}`}>
-        {/* <Header activeMenu={setActiveMenu} overflowActiveMenu={setOverflowActiveMenu} /> */}
+        {/* <Header /> */}
         <main>{children}</main>
         <Footer />
         <BtnTop />

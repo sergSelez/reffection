@@ -13,20 +13,20 @@
     left: 0px;
     justify-content: flex-end;
     -webkit-user-select: none;
-       -moz-user-select: none;
-            user-select: none;
+    -moz-user-select: none;
+    user-select: none;
     pointer-events: none;
   }
   .modal_menu_wrap.ReactModal__Overlay--before-close {
     -webkit-user-select: none;
-       -moz-user-select: none;
-            user-select: none;
+    -moz-user-select: none;
+    user-select: none;
     pointer-events: none;
   }
   .modal_menu_wrap.ReactModal__Overlay--after-open {
     -webkit-user-select: auto;
-       -moz-user-select: auto;
-            user-select: auto;
+    -moz-user-select: auto;
+    user-select: auto;
     pointer-events: all;
   }
   .modal_menu_wrap .modal_menu {
@@ -72,7 +72,7 @@
     display: flex;
   }
   .modal_menu_wrap .modal_menu nav ul li a {
-    color: #FFF;
+    color: #fff;
     font-size: 26px;
     font-weight: 400;
     line-height: 34px;
@@ -91,8 +91,8 @@
     translate: -50% -50%;
     animation: animMenuCircle 10s infinite forwards;
     -webkit-user-select: none;
-       -moz-user-select: none;
-            user-select: none;
+    -moz-user-select: none;
+    user-select: none;
     pointer-events: none;
     will-change: transform;
   }

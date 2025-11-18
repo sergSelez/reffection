@@ -1,5 +1,6 @@
 import cls from './Btn.module.scss';
 
+// TODO: вернуть обычные классы
 function BtnLink({ children, label, link, className }) {
   return (
     <a

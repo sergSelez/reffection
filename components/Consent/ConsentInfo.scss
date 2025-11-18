@@ -1,16 +1,15 @@
-@import '../../scss/media';
+@use '../../app/styles/scss/media' as *;
 
 .consent {
+  h1 {
+    max-width: 950px;
 
-   h1 {
-      max-width: 950px;
+    @include desktop {
+      max-width: 700px;
+    }
+  }
 
-      @include desktop {
-         max-width: 700px;
-      }
-   }
-
-   p {
-      margin-bottom: 15px;
-   }
+  p {
+    margin-bottom: 15px;
+  }
 }

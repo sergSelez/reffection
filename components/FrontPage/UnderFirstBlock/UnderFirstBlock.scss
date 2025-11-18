@@ -1,13 +1,13 @@
-@import '../../../scss/media';
+@use '../../../app/styles/scss/media' as *;
 
 .second_block {
-   margin-top: 80px;
+  margin-top: 80px;
 
-   @include tablet {
-      margin-top: 30px;
-   }
+  @include tablet {
+    margin-top: 30px;
+  }
 
-   .benefits {
-      margin-top: 0px;
-   }
+  .benefits {
+    margin-top: 0px;
+  }
 }

@@ -1,4 +1,4 @@
-@import '../../../../scss/media';
+@use '../../../../app/styles/scss/media' as *;
 
 .reviews_blockquote {
    position: relative;

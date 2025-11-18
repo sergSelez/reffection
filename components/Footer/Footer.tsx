@@ -2,25 +2,25 @@
 // import { HashLink as Link } from 'react-router-hash-link';
 import Link from 'next/link';
 import BtnLink from '../utilities/Btn/BtnLink';
-import cls from './Footer.module.scss';
+import './Footer.scss';
 import { useMediaQuery } from 'react-responsive';
 import { getMetaConfig } from '../../config/metaConfig';
 
 function Footer() {
   const isTablet = useMediaQuery({ query: '(max-width: 1199px)' });
-  if (typeof window === 'undefined') {
-    return <div>Загрузка...</div>;
-  }
+  // if (typeof window === 'undefined') {
+  //   return <div>Загрузка...</div>;
+  // }
   const currentDomain = window.location.hostname.split('.');
   const { city } = getMetaConfig(currentDomain[0]);
 
   return (
-    <footer className={cls.footer} id={'footer'}>
-      <div className={cls.container}>
-        <div className={cls.footer_wrap}>
-          <div className={cls.row}>
+    <footer className="footer" id={'footer'}>
+      <div className="container">
+        <div className="footer_wrap ">
+          <div className="row">
             <div className="col-xl-4 col-md-5">
-              <nav className={cls.footer_wrap_nav}>
+              <nav className="footer_wrap_nav">
                 <ul>
                   <li>
                     <Link href="/#products">Продукты</Link>
@@ -47,7 +47,7 @@ function Footer() {
               </nav>
             </div>
             <div className="col-xl-8 col-md-7">
-              <div className={cls.footer_wrap_contacts}>
+              <div className="footer_wrap_contacts">
                 {city === 'Москва' && (
                   <div className="footer_wrap_contacts_info">
                     <div className="footer_wrap_contacts_info-item">
@@ -60,7 +60,7 @@ function Footer() {
                     </div>
                   </div>
                 )}
-                <div className={cls.footer_wrap_contacts_social}>
+                <div className="footer_wrap_contacts_social">
                   <BtnLink link={'https://t.me/Reffection_corp'} label={'telegram'} target={'_blank'}>
                     <div className="icon">
                       <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
@@ -89,7 +89,7 @@ function Footer() {
             </div>
             {!isTablet && (
               <div className="col-xl-3">
-                <Link href="/" className={cls.footer_wrap_logo} aria-label="Логотип">
+                <Link href="/" className="footer_wrap_logo" aria-label="Логотип">
                   <svg xmlns="http://www.w3.org/2000/svg" width={240} height={26} viewBox="0 0 240 26" fill="none">
                     <path
                       fillRule="evenodd"
@@ -102,14 +102,14 @@ function Footer() {
               </div>
             )}
             <div className="col-xl-9">
-              <div className={cls.footer_wrap_privacy}>
-                <Link href="/privacy" className={cls['footer_wrap_privacy-item']}>
+              <div className="footer_wrap_privacy">
+                <Link href="/privacy" className="footer_wrap_privacy-item">
                   Политика обработки персональных данных
                 </Link>
-                <Link href="/consent" className={cls['footer_wrap_privacy-item']}>
+                <Link href="/consent" className="footer_wrap_privacy-item">
                   Согласие на обработку персональных данных
                 </Link>
-                <p className={cls['footer_wrap_privacy-item']}>© 2025 Reffection.</p>
+                <p className="footer_wrap_privacy-item">© 2025 Reffection.</p>
               </div>
             </div>
           </div>
