@@ -1,4 +1,3 @@
-import React from 'react';
 import './SectionHead.scss';
 
 function SectionHead({ children, className }) {

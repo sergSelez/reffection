@@ -2,6 +2,7 @@ import Link from 'next/link';
 import CustomText from '../utilities/CustomText/CustomText';
 import './ConsentInfo.scss';
 
+//TODO: что-то с стилями страницы, стили беруться из infoblock
 function ConsentInfo() {
   return (
     <section className="infoblock consent">

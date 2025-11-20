@@ -1,4 +1,4 @@
-@import '../../../scss/media';
+@use '../../../app/styles/scss/media' as *;
 
 .partner_portrait {
   padding-top: 95px;
@@ -42,7 +42,7 @@
       max-width: clamp(59.375rem, 7.813rem + 51.563vw, 69.688rem);
       // 1115px > 950px
       position: relative;
-      color: #FFF;
+      color: #fff;
       user-select: none;
       overflow: hidden;
 
@@ -55,7 +55,7 @@
       }
 
       @include tablet {
-        color: #FFF;
+        color: #fff;
         text-align: center;
         font-size: 18px;
         line-height: normal;
@@ -117,8 +117,8 @@
         svg .svg-elem-2 {
           stroke-dashoffset: 473.5349426269531px;
           stroke-dasharray: 473.5349426269531px;
-          -webkit-transition: stroke-dashoffset .5s ease-in-out .5s;
-          transition: stroke-dashoffset .5s ease-in-out .5s;
+          -webkit-transition: stroke-dashoffset 0.5s ease-in-out 0.5s;
+          transition: stroke-dashoffset 0.5s ease-in-out 0.5s;
         }
 
         svg.active .svg-elem-2 {
@@ -128,8 +128,6 @@
             stroke-dashoffset: 0;
           }
         }
-
-
       }
 
       .line {
@@ -144,7 +142,7 @@
           width: 100%;
           transform: scaleX(1);
           height: 1px;
-          background: #FFF;
+          background: #fff;
           user-select: none;
           pointer-events: none;
 
@@ -227,7 +225,6 @@
       }
 
       &_right {
-
         transform-origin: 0% 100%;
 
         @include mobile {
@@ -246,15 +243,15 @@
         padding: clamp(1.188rem, -1.938rem + 3.125vw, 1.813rem);
         // 29px > 19px
         border-radius: 10px;
-        background: rgba(255, 255, 255, 0.20);
+        background: rgba(255, 255, 255, 0.2);
 
         /* inner shadow for cards */
-        box-shadow: 0px 0px 50px 0px rgba(255, 255, 255, 0.50) inset;
+        box-shadow: 0px 0px 50px 0px rgba(255, 255, 255, 0.5) inset;
         backdrop-filter: blur(25px);
         // transform: scale(0);
         // opacity: 0;
         // transform-origin: 100% 50%;
-        transition: .4s ease-out;
+        transition: 0.4s ease-out;
 
         &.active {
           opacity: 1;
@@ -317,7 +314,9 @@
         &-text {
           width: 100%;
           max-width: calc(100% - 60px - 30px);
-          max-width: calc(100% - clamp(3.125rem, 0rem + 3.125vw, 3.75rem) - clamp(1.25rem, -1.875rem + 3.125vw, 1.875rem));
+          max-width: calc(
+            100% - clamp(3.125rem, 0rem + 3.125vw, 3.75rem) - clamp(1.25rem, -1.875rem + 3.125vw, 1.875rem)
+          );
           // 60px > 50px
           // 30px > 20px
 
@@ -346,7 +345,7 @@
         max-width: clamp(23.125rem, -38.75rem + 51.563vw, 43.75rem);
         transform: rotateY(90deg);
         opacity: 0;
-        transition: .6s ease-out;
+        transition: 0.6s ease-out;
 
         @include mobile {
           transform: rotateY(0deg) rotateX(-90deg);
@@ -420,10 +419,10 @@
         // 49px > 39px
 
         border-radius: 10px;
-        background: rgba(255, 255, 255, 0.20);
+        background: rgba(255, 255, 255, 0.2);
 
         /* inner shadow for cards */
-        box-shadow: 0px 0px 50px 0px rgba(255, 255, 255, 0.50) inset;
+        box-shadow: 0px 0px 50px 0px rgba(255, 255, 255, 0.5) inset;
         backdrop-filter: blur(25px);
 
         @include desktop {

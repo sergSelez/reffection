@@ -21,6 +21,7 @@ function ServicePageBtns() {
   function closeModal() {
     setIsOpen(false);
   }
+
   return (
     <div className="services_page_btns">
       <Link href={'/#cases'} className="services_page_btns-btn btn light_gray">
