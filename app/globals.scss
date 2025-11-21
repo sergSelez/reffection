@@ -10,7 +10,7 @@ body {
 
 body {
   color: #323232;
-  font-family: '--font-onest', sans-serif;
+  font-family: var(--font-onest), sans-serif;
   background-color: #fff;
   font-size: 16px;
   font-style: normal;
@@ -161,7 +161,7 @@ main {
 
 .section_title {
   color: #121212;
-  font-family: '--font-onest', sans-serif;
+  font-family: var(--font-onest), sans-serif;
   font-size: 42px;
   font-size: clamp(2.25rem, 0.375rem + 1.875vw, 2.625rem);
   // 42px > 36px

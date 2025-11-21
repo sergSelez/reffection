@@ -3,7 +3,7 @@
   flex-wrap: wrap;
   justify-content: center;
   -moz-column-gap: 20px;
-       column-gap: 20px;
+  column-gap: 20px;
   row-gap: 10px;
   width: 100%;
 }
@@ -14,11 +14,11 @@
   padding: 16px 19px;
   padding: clamp(0.688rem, -0.875rem + 1.563vw, 1rem) clamp(1.063rem, 0.438rem + 0.625vw, 1.188rem);
   border-radius: 12px;
-  border: 1px solid #E8E8EB;
-  background: #FFF;
+  border: 1px solid #e8e8eb;
+  background: #fff;
   color: #121212;
   text-align: center;
-  font-family: "IBM Plex Mono";
+  font-family: var(--font-ibm), sans-serif;
   font-size: 18px;
   font-size: clamp(1rem, 0.375rem + 0.625vw, 1.125rem);
   font-weight: 400;
@@ -31,14 +31,14 @@
 }
 @media (hover: hover) {
   .service_page_tabs-item:hover {
-    color: #006AFE;
-    border-color: #006AFE;
+    color: #006afe;
+    border-color: #006afe;
   }
 }
 @media (hover: none) {
   .service_page_tabs-item:active {
-    color: #006AFE;
-    border-color: #006AFE;
+    color: #006afe;
+    border-color: #006afe;
   }
 }
 @media screen and (max-width: 1599px) {
@@ -58,8 +58,8 @@
   }
 }
 .service_page_tabs-item.active {
-  color: #006AFE;
-  border-color: #006AFE;
+  color: #006afe;
+  border-color: #006afe;
 }
 
 .react-select {
@@ -70,7 +70,7 @@
   width: 100%;
   max-width: 100%;
   border-radius: 10px;
-  border-color: #006AFE;
+  border-color: #006afe;
   box-shadow: unset;
 }
 .react-select .react-select__control.react-select__control--menu-is-open {
@@ -82,14 +82,14 @@
   transform: rotate(180deg);
 }
 .react-select .react-select__control .react-select__control--is-focused {
-  border: 1px solid #006AFE;
+  border: 1px solid #006afe;
 }
 .react-select .react-select__value-container {
   padding: 8px 12px;
 }
 .react-select .react-select__single-value {
-  color: #006AFE;
-  font-family: "IBM Plex Mono";
+  color: #006afe;
+  font-family: var(--font-ibm), sans-serif;
   font-size: 14px;
   font-weight: 400;
   line-height: 20px;
@@ -123,7 +123,7 @@
   top: 100%;
   margin: 0px;
   box-shadow: unset;
-  border: 1px solid #006AFE;
+  border: 1px solid #006afe;
   border-radius: 0px;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
@@ -135,7 +135,7 @@
 }
 .react-select .react-select__option {
   color: #121212;
-  font-family: "IBM Plex Mono";
+  font-family: var(--font-ibm), sans-serif;
   font-size: 14px;
   font-weight: 400;
   line-height: 20px;
@@ -144,10 +144,10 @@
   padding: 5px 13px;
 }
 .react-select .react-select__option--is-focused {
-  color: #006AFE;
+  color: #006afe;
   background-color: transparent;
 }
 .react-select .react-select__option--is-selected {
-  color: #006AFE;
+  color: #006afe;
   background-color: transparent;
 }

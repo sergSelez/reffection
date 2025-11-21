@@ -1,6 +1,6 @@
 .typical_text {
   color: #121212;
-  font-family: "Onest", sans-serif;
+  font-family: var(--font-onest), sans-serif;
   font-size: 20px;
   font-size: clamp(1.125rem, 0.5rem + 0.625vw, 1.25rem);
   font-weight: 400;
@@ -44,13 +44,13 @@
   }
 }
 .typical_text.gray {
-  color: #C9C9C9;
+  color: #c9c9c9;
 }
 .typical_text.white {
-  color: #FFF;
+  color: #fff;
 }
 .typical_text.ibm {
-  font-family: "IBM Plex Mono", sans-serif;
+  font-family: var(--font-ibm), sans-serif;
   letter-spacing: 0px;
 }
 .typical_text.center {

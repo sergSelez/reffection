@@ -3,14 +3,14 @@
   justify-content: center;
   align-items: center;
   -moz-column-gap: 10px;
-       column-gap: 10px;
+  column-gap: 10px;
   border-radius: 50px;
-  background: #006AFE;
+  background: #006afe;
   padding: 7px 16px;
   padding: clamp(0.375rem, 0.063rem + 0.313vw, 0.438rem) clamp(0.813rem, -0.125rem + 0.938vw, 1rem);
-  color: #FFF;
+  color: #fff;
   text-align: center;
-  font-family: "IBM Plex Mono";
+  font-family: var(--font-ibm), sans-serif;
   font-size: 18px;
   font-size: clamp(0.875rem, -0.375rem + 1.25vw, 1.125rem);
   font-weight: 400;
@@ -58,12 +58,12 @@
   height: 100%;
 }
 .btn.gray {
-  background: #C9C9C9;
+  background: #c9c9c9;
   color: #121212;
 }
 .btn.light_gray {
   color: #121212;
-  background: #F5F5F7;
+  background: #f5f5f7;
 }
 .btn.white {
   color: #121212;
@@ -71,7 +71,7 @@
 }
 .btn.orange {
   color: #fff;
-  background: #F26419;
+  background: #f26419;
 }
 @media (hover: hover) {
   .btn:hover {

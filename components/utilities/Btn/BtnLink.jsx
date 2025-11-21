@@ -1,14 +1,13 @@
-import cls from './Btn.module.scss';
+import './Btn.scss';
 
-// TODO: вернуть обычные классы
-function BtnLink({ children, label, link, className }) {
+function BtnLink({ children, label, link, className, target }) {
   return (
     <a
       href={link}
       type="button"
-      className={`btn ${cls.btn} ${className ? className : ''}`}
+      className={`btn ${className ? className : ''}`}
       aria-label={label}
-      target="_blank"
+      target={target ? '' : '_blank'}
       rel="nofollow noreferrer"
     >
       {children}

@@ -1,6 +1,8 @@
 'use client';
 import CustomText from '../../utilities/CustomText/CustomText';
 import './FirstBlock.scss';
+import '../../utilities/Btn/BtnButton';
+import '../../utilities/Btn/BtnLink';
 import Marquee from 'react-fast-marquee';
 import Modal from 'react-modal';
 import { useState } from 'react';

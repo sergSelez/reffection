@@ -178,7 +178,7 @@
 
       color: #fff;
       text-align: center;
-      font-family: 'IBM Plex Mono';
+      font-family: var(--font-ibm), sans-serif;
       font-size: fl(18, 14);
       font-weight: 400;
       line-height: fl(24, 20);

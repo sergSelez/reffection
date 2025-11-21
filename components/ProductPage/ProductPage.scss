@@ -177,7 +177,7 @@
       &-title {
         color: #a8a8a8;
         text-align: center;
-        font-family: Onest;
+        font-family: var(--font-onest), sans-serif;
         font-size: 34px;
         font-size: media.fl(34, 28);
         font-style: normal;
@@ -202,7 +202,7 @@
       &-text {
         color: #fff;
         text-align: center;
-        font-family: Onest;
+        font-family: var(--font-onest), sans-serif;
         font-size: 20px;
         font-size: media.fl(20, 16);
         font-style: normal;

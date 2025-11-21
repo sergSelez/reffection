@@ -174,7 +174,7 @@
             .count {
               color: #fff;
               text-align: right;
-              font-family: 'Perfograma', sans-serif;
+              font-family: var(--font-perfograma), sans-serif;
               font-size: 54px;
               font-size: media.fl(54, 40);
               font-weight: 400;

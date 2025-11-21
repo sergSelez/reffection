@@ -38,7 +38,7 @@
   border: none;
   outline: none;
   color: #ffffff;
-  font-family: 'Onest';
+  font-family: var(--font-onest), sans-serif;
   font-weight: 400;
   font-size: 20px;
   font-size: media.fl(20, 18);

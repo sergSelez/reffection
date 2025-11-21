@@ -28,7 +28,7 @@
 
     color: #121212;
     text-align: center;
-    font-family: 'IBM Plex Mono';
+    font-family: var(--font-ibm), sans-serif;
     font-size: 18px;
     font-size: clamp(1rem, 0.375rem + 0.625vw, 1.125rem);
     // 18px > 16px
@@ -102,7 +102,7 @@
 
   .react-select__single-value {
     color: #006afe;
-    font-family: 'IBM Plex Mono';
+    font-family: var(--font-ibm), sans-serif;
     font-size: 14px;
     font-weight: 400;
     line-height: 20px;
@@ -161,7 +161,7 @@
 
   .react-select__option {
     color: #121212;
-    font-family: 'IBM Plex Mono';
+    font-family: var(--font-ibm), sans-serif;
     font-size: 14px;
     font-weight: 400;
     line-height: 20px;

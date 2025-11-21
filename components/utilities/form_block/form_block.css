@@ -45,7 +45,7 @@
 }
 .remodal .close-modal {
   position: absolute;
-  background: #F5F5F7;
+  background: #f5f5f7;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -240,12 +240,12 @@
   align-items: center;
   padding: 7px 16px;
   border-radius: 50px;
-  background: #006AFE;
+  background: #006afe;
   margin-left: auto;
   margin-right: auto;
-  color: #FFF;
+  color: #fff;
   text-align: center;
-  font-family: "IBM Plex Mono";
+  font-family: var(--font-ibm), sans-serif;
   font-size: 18px;
   line-height: 24px;
   letter-spacing: 0.36px;
@@ -271,8 +271,8 @@
   padding: 0 20px;
   height: 100%;
   border-radius: 12px;
-  border: 1px solid #E8E8EB;
-  background: #FFF;
+  border: 1px solid #e8e8eb;
+  background: #fff;
   color: #121212;
   width: 100%;
   font-size: 16px;
@@ -292,8 +292,8 @@
   display: none;
 }
 .remodal form .modal_check input:checked + label:before {
-  border-color: #006AFE;
-  background-color: #006AFE;
+  border-color: #006afe;
+  background-color: #006afe;
 }
 .remodal form .modal_check label {
   color: #121212;
@@ -311,7 +311,7 @@
   font-size: inherit;
   font-style: inherit;
   font-weight: inherit;
-  color: #006AFE;
+  color: #006afe;
   line-height: inherit;
   letter-spacing: inherit;
   transition: 0.4s;
@@ -338,7 +338,7 @@
   }
 }
 .remodal form .modal_check label:before {
-  content: "";
+  content: '';
   display: inline-block;
   width: 14px;
   min-width: 14px;

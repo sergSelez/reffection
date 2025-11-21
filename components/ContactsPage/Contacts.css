@@ -48,8 +48,8 @@
   padding: 49px;
   padding: clamp(2.438rem, -0.688rem + 3.125vw, 3.063rem);
   border-radius: 10px;
-  border: 1px solid #E8E8EB;
-  background: #FFF;
+  border: 1px solid #e8e8eb;
+  background: #fff;
   row-gap: 30px;
   height: 100%;
 }
@@ -57,7 +57,7 @@
   .contacts_pg_wrap_list_item {
     flex-direction: row;
     -moz-column-gap: 30px;
-         column-gap: 30px;
+    column-gap: 30px;
     padding: 39px;
     padding: clamp(1.813rem, -1.313rem + 4.167vw, 2.438rem);
   }
@@ -73,7 +73,7 @@
   .contacts_pg_wrap_list_item {
     flex-direction: row;
     -moz-column-gap: 20px;
-         column-gap: 20px;
+    column-gap: 20px;
   }
 }
 .contacts_pg_wrap_list_item.social_btn .contacts_pg_wrap_list_item_bot {
@@ -134,7 +134,7 @@
   .contacts_pg_wrap_list_item_bot_btns {
     flex-direction: row;
     -moz-column-gap: 6px;
-         column-gap: 6px;
+    column-gap: 6px;
   }
 }
 .contacts_pg_wrap_list_item-icon {
@@ -247,20 +247,20 @@
 }
 @media (hover: hover) {
   .contacts_pg_wrap_list_item-link:hover {
-    color: #006AFE;
+    color: #006afe;
   }
 }
 @media (hover: none) {
   .contacts_pg_wrap_list_item-link:active {
-    color: #006AFE;
+    color: #006afe;
   }
 }
 .contacts_pg_wrap_list_item-link_line {
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
-  color: #006AFE;
-  font-family: "IBM Plex Mono";
+  color: #006afe;
+  font-family: var(--font-ibm), sans-serif;
   font-size: 16px;
   font-weight: 400;
   line-height: 24px;
@@ -296,12 +296,12 @@
   padding: 7px 16px;
   padding: clamp(0.375rem, 0.063rem + 0.313vw, 0.438rem) clamp(0.813rem, -0.125rem + 0.938vw, 1rem);
   -moz-column-gap: 10px;
-       column-gap: 10px;
+  column-gap: 10px;
   border-radius: 50px;
-  background: #006AFE;
-  color: #FFF;
+  background: #006afe;
+  color: #fff;
   text-align: center;
-  font-family: "IBM Plex Mono";
+  font-family: var(--font-ibm), sans-serif;
   font-size: 18px;
   font-size: clamp(0.875rem, -0.375rem + 1.25vw, 1.125rem);
   font-weight: 400;
@@ -364,7 +364,7 @@
   justify-content: space-between;
   align-items: flex-start;
   -moz-column-gap: 30px;
-       column-gap: 30px;
+  column-gap: 30px;
   padding: 29px;
 }
 @media screen and (max-width: 1599px) {
@@ -376,7 +376,7 @@
   .contacts_pg_wrap_list_item.map {
     padding: 19px;
     -moz-column-gap: 20px;
-         column-gap: 20px;
+    column-gap: 20px;
   }
 }
 @media screen and (max-width: 767px) {
@@ -388,9 +388,9 @@
 .contacts_pg_wrap_list_item.map .contacts_pg_wrap_list_item_left {
   display: flex;
   -moz-column-gap: 50px;
-       column-gap: 50px;
+  column-gap: 50px;
   -moz-column-gap: clamp(1.875rem, -4.375rem + 6.25vw, 3.125rem);
-       column-gap: clamp(1.875rem, -4.375rem + 6.25vw, 3.125rem);
+  column-gap: clamp(1.875rem, -4.375rem + 6.25vw, 3.125rem);
   width: 100%;
   max-width: 730px;
   max-width: clamp(22.5rem, -93.125rem + 115.625vw, 45.625rem);
@@ -402,7 +402,7 @@
 @media screen and (max-width: 1599px) {
   .contacts_pg_wrap_list_item.map .contacts_pg_wrap_list_item_left {
     -moz-column-gap: 30px;
-         column-gap: 30px;
+    column-gap: 30px;
     max-width: 360px;
   }
 }
@@ -410,7 +410,7 @@
   .contacts_pg_wrap_list_item.map .contacts_pg_wrap_list_item_left {
     padding: 0px;
     -moz-column-gap: 20px;
-         column-gap: 20px;
+    column-gap: 20px;
     max-width: 280px;
     flex-direction: column;
     row-gap: 20px;
@@ -483,5 +483,5 @@
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }

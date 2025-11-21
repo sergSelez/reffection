@@ -95,7 +95,7 @@
   width: auto;
 }
 .rev_swiper_block .reviews_wrap_item_swiper .sw_rev_item_left-subtitle {
-  color: #FFF;
+  color: #fff;
   font-size: 26px;
   font-size: clamp(1.25rem, -0.625rem + 1.875vw, 1.625rem);
   font-weight: 400;
@@ -137,7 +137,7 @@
   justify-content: space-between;
   flex: 1 1 auto;
   -moz-column-gap: 40px;
-       column-gap: 40px;
+  column-gap: 40px;
   margin-top: 40px;
   padding-right: 20px;
 }
@@ -145,7 +145,7 @@
   .rev_swiper_block .reviews_wrap_item_swiper .sw_rev_item_left_time {
     padding-right: 40px;
     -moz-column-gap: 20px;
-         column-gap: 20px;
+    column-gap: 20px;
     max-width: 430px;
     max-width: clamp(23.75rem, 8.125rem + 20.833vw, 26.875rem);
   }
@@ -166,7 +166,7 @@
   }
 }
 .rev_swiper_block .reviews_wrap_item_swiper .sw_rev_item_left_time span {
-  color: #C9C9C9;
+  color: #c9c9c9;
   font-size: 20px;
   font-size: clamp(1.125rem, 0.5rem + 0.625vw, 1.25rem);
   font-weight: 400;
@@ -197,8 +197,8 @@
   top: 0px;
   left: 0px;
   -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
+  -moz-user-select: none;
+  user-select: none;
   pointer-events: none;
 }
 @media screen and (max-width: 1599px) {
@@ -332,14 +332,14 @@
   align-items: flex-start;
   justify-content: flex-end;
   -moz-column-gap: 12px;
-       column-gap: 12px;
+  column-gap: 12px;
   -moz-column-gap: clamp(0.5rem, -0.75rem + 1.25vw, 0.75rem);
-       column-gap: clamp(0.5rem, -0.75rem + 1.25vw, 0.75rem);
+  column-gap: clamp(0.5rem, -0.75rem + 1.25vw, 0.75rem);
   position: absolute;
   bottom: 0;
   right: 30px;
   right: clamp(1.25rem, -1.875rem + 3.125vw, 1.875rem);
-  color: #C9C9C9;
+  color: #c9c9c9;
   text-align: left;
   font-size: 16px;
   font-size: clamp(0.875rem, 0.25rem + 0.625vw, 1rem);
@@ -351,8 +351,8 @@
 @media screen and (max-width: 1599px) {
   .rev_swiper_block .reviews_wrap_item_swiper .sw_rev_item_middle_text {
     -moz-column-gap: 8px;
-         column-gap: 8px;
-    color: #C9C9C9;
+    column-gap: 8px;
+    color: #c9c9c9;
     font-size: 14px;
     font-size: clamp(0.75rem, 0.125rem + 0.833vw, 0.875rem);
     line-height: 22px;
@@ -364,8 +364,8 @@
     right: auto;
     left: 0px;
     -webkit-user-select: none;
-       -moz-user-select: none;
-            user-select: none;
+    -moz-user-select: none;
+    user-select: none;
     pointer-events: none;
     position: unset;
     max-width: 40%;
@@ -375,7 +375,7 @@
 @media screen and (max-width: 1199px) {
   .rev_swiper_block .reviews_wrap_item_swiper .sw_rev_item_middle_text {
     -moz-column-gap: 12px;
-         column-gap: 12px;
+    column-gap: 12px;
     text-align: left;
     font-size: 12px;
     line-height: normal;
@@ -383,8 +383,8 @@
     position: unset;
     padding: 0px;
     -webkit-user-select: auto;
-       -moz-user-select: auto;
-            user-select: auto;
+    -moz-user-select: auto;
+    user-select: auto;
     pointer-events: all;
     justify-content: flex-start;
     margin-top: 15px;
@@ -465,7 +465,7 @@
   display: flex;
   flex-direction: column;
   row-gap: 10px;
-  background: #7EB4FF;
+  background: #7eb4ff;
   padding: 40px;
   padding: clamp(1.875rem, -1.25rem + 3.125vw, 2.5rem);
   height: 100%;
@@ -493,7 +493,7 @@
   position: relative;
   z-index: 2;
   flex: 1 1 auto;
-  color: #FFF;
+  color: #fff;
   font-size: 20px;
   font-size: clamp(1.125rem, 0.5rem + 0.625vw, 1.25rem);
   font-weight: 400;
@@ -501,7 +501,7 @@
   line-height: clamp(1.625rem, 1rem + 0.625vw, 1.75rem);
   letter-spacing: 0.4px;
   -webkit-hyphens: auto;
-          hyphens: auto;
+  hyphens: auto;
 }
 @media screen and (max-width: 1599px) {
   .rev_swiper_block .reviews_wrap_item_swiper .sw_rev_item_right_list_item-title {
@@ -521,8 +521,8 @@
 .rev_swiper_block .reviews_wrap_item_swiper .sw_rev_item_right_list_item-num {
   position: relative;
   z-index: 2;
-  color: #FFF;
-  font-family: "Perfograma";
+  color: #fff;
+  font-family: var(--font-perfograma), sans-serif;
   font-size: 54px;
   font-size: clamp(2.75rem, -0.375rem + 3.125vw, 3.375rem);
   font-weight: 400;
@@ -547,7 +547,7 @@
   position: relative;
   z-index: 2;
   align-items: flex-end;
-  color: #FFF;
+  color: #fff;
   font-size: 20px;
   font-size: clamp(1.125rem, 0.5rem + 0.625vw, 1.25rem);
   font-weight: 400;
@@ -557,7 +557,7 @@
   min-height: 56px;
   min-height: clamp(2.875rem, -0.25rem + 3.125vw, 3.5rem);
   -webkit-hyphens: auto;
-          hyphens: auto;
+  hyphens: auto;
 }
 @media screen and (max-width: 1599px) {
   .rev_swiper_block .reviews_wrap_item_swiper .sw_rev_item_right_list_item-text {
@@ -591,8 +591,8 @@
   aspect-ratio: 1/1;
   z-index: 3;
   -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
+  -moz-user-select: none;
+  user-select: none;
 }
 @media screen and (max-width: 1599px) {
   .rev_swiper_block .reviews_wrap_item_swiper .sw_rev_item_right_list_item-image {
@@ -605,7 +605,7 @@
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 .rev_swiper_block .reviews_wrap_item_swiper .sw_rev_item_right_list_item-circle {
   display: flex;
@@ -613,7 +613,7 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background: #0970FF;
+  background: #0970ff;
   width: 100%;
   height: 100%;
   border-radius: 50%;
@@ -629,7 +629,7 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background: #0970FF;
+  background: #0970ff;
   width: 80%;
   height: 80%;
   border-radius: 50%;
@@ -642,14 +642,14 @@
   display: flex;
   flex-direction: row;
   -moz-column-gap: 40px;
-       column-gap: 40px;
+  column-gap: 40px;
   -moz-column-gap: clamp(1.875rem, -1.25rem + 3.125vw, 2.5rem);
-       column-gap: clamp(1.875rem, -1.25rem + 3.125vw, 2.5rem);
+  column-gap: clamp(1.875rem, -1.25rem + 3.125vw, 2.5rem);
 }
 @media screen and (max-width: 1599px) {
   .rev_swiper_block .reviews_wrap_item_swiper .sw_rev_item_right_list_item.inline {
     -moz-column-gap: 30px;
-         column-gap: 30px;
+    column-gap: 30px;
   }
 }
 @media screen and (max-width: 1199px) {
@@ -689,7 +689,7 @@
 .rev_swiper_block .reviews_wrap_item_swiper_btns {
   display: flex;
   -moz-column-gap: 20px;
-       column-gap: 20px;
+  column-gap: 20px;
   position: absolute;
   bottom: 0;
   left: 0;
@@ -722,14 +722,14 @@
   background: #212121;
   padding: 0 19px;
   -moz-column-gap: 10px;
-       column-gap: 10px;
+  column-gap: 10px;
   bottom: unset;
 }
 @media screen and (max-width: 1199px) {
   .rev_swiper_block .reviews_wrap_item_swiper_btns .swiper-pagination {
     border-radius: 4px;
     -moz-column-gap: 10px;
-         column-gap: 10px;
+    column-gap: 10px;
   }
 }
 .rev_swiper_block .reviews_wrap_item_swiper_btns .swiper-pagination-bullet {
