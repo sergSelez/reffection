@@ -1,12 +1,14 @@
 'use client';
-// import Head from 'next/head';
 import './Header.scss';
 import { useMediaQuery } from 'react-responsive';
 import BtnLink from '../utilities/Btn/BtnLink';
 import { useEffect, useRef, useState } from 'react';
-// import ModalMenu from '../utilities/Modals/ModalMenu/ModalMenu';
+import ModalMenu from '../utilities/Modals/ModalMenu/ModalMenu';
+// import { HashLink as Link } from 'react-router-hash-link';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { useLocation } from 'react-router-dom';
+import CityBlock from '../utilities/CityBlock/CityBlock';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
@@ -15,10 +17,9 @@ gsap.registerPlugin(ScrollTrigger);
 function Header({ activeMenu, overflowActiveMenu }) {
   const [modalIsOpen, setIsOpen] = useState(false);
   const location = usePathname();
-  const [isClient, setIsClient] = useState(false);
+  const subMenuRef = useRef(null);
   const isMobile = useMediaQuery({ query: '(max-width: 767px)' });
   const btnRef = useRef(null); // Ссылка на кнопку
-  const subMenuRef = useRef(null);
   const headerRef = useRef(null);
   const [telegramClassBtn, setTelegramClassBtn] = useState('');
 
@@ -71,11 +72,12 @@ function Header({ activeMenu, overflowActiveMenu }) {
 
   // Получем текущую ссылку
   const isActiveLink = (path) => {
-    return location.pathname === path;
+    return location === path;
   };
 
   const isMain = location === '/';
 
+  // Выпадающее меню
   const handleClick = (e) => {
     const thisMenu = subMenuRef.current;
     const thisBtn = e.target;
@@ -85,6 +87,14 @@ function Header({ activeMenu, overflowActiveMenu }) {
     // Сохраняем ссылку на кнопку для дальнейшего использования
     btnRef.current = thisBtn;
   };
+
+  // Отслеживаем изменение ссылки для sunMenu
+  useEffect(() => {
+    if (subMenuRef.current && btnRef.current) {
+      subMenuRef.current.classList.remove('active');
+      btnRef.current.classList.remove('active');
+    }
+  }, [location]); // Срабатывает при изменении location.pathname
 
   // Закрытие списка по клику вне
   const handleClickOutside = (event) => {
@@ -100,12 +110,6 @@ function Header({ activeMenu, overflowActiveMenu }) {
     }
   };
 
-  const handleTriggerClick = (event) => {
-    event.stopPropagation();
-    subMenuRef.current.classList.toggle('active');
-    btnRef.current.classList.toggle('active');
-  };
-
   useEffect(() => {
     document.addEventListener('mousedown', handleClickOutside);
 
@@ -114,58 +118,10 @@ function Header({ activeMenu, overflowActiveMenu }) {
     };
   }, []);
 
-  useEffect(() => {
-    setIsClient(true);
-  }, []);
-
-  if (!isClient) {
-    return null; // Возвращаем null на сервере, чтобы избежать проблем с гидратацией
-  }
   return (
     <header className={`header ${!allowedRoutes.includes(location) ? 'white' : ''}`} ref={headerRef}>
-      {/* <Head>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              '@context': 'https://schema.org',
-              '@type': 'SiteNavigationElement',
-              name: [
-                'Segment Scoring',
-                'Retargeting trigger leads',
-                'Call Center',
-                'Стоимость',
-                'Блог',
-                'Партнерам',
-                'Контакты',
-              ],
-              url: [
-                'https://reffection.ru/product/segment-scoring',
-                'https://reffection.ru/product/retargeting-trigger-leads',
-                'https://reffection.ru/product/call-center',
-                'https://reffection.ru/price',
-                'https://reffection.ru/blog',
-                'https://reffection.ru/partners',
-                'https://reffection.ru/contacts',
-              ],
-            }),
-          }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              '@context': 'https://schema.org',
-              '@type': 'ImageObject',
-              contentUrl: 'https://reffection.ru/logo_black_singlepage.jpg',
-              width: 512,
-              height: 512,
-            }),
-          }}
-        />
-      </Head> */}
       <div className="header_wrap">
-        <Link scroll={false} href="https://reffection.ru/" className="header_wrap-logo" aria-label="Логотип">
+        <Link href="/" className="header_wrap-logo" aria-label="Логотип">
           <svg xmlns="http://www.w3.org/2000/svg" width={232} height={25} viewBox="0 0 232 25" fill="none">
             <path
               fillRule="evenodd"
@@ -199,14 +155,14 @@ function Header({ activeMenu, overflowActiveMenu }) {
               </ul>
             </li>
             <li>
-              <Link href="/price" className={isActiveLink('/contacts') ? 'current-link' : ''}>
+              <Link href="/price" className={isActiveLink('/price') ? 'current-link' : ''}>
                 Стоимость
               </Link>
             </li>
             <li>
-              <Link href="/blog" className={isActiveLink('/partners') ? 'current-link' : ''}>
+              <a href="/blog" className={isActiveLink('/blog') ? 'current-link' : ''}>
                 Блог
-              </Link>
+              </a>
             </li>
             <li>
               <Link href="/partners" className={isActiveLink('/partners') ? 'current-link' : ''}>
@@ -221,6 +177,7 @@ function Header({ activeMenu, overflowActiveMenu }) {
           </ul>
         </nav>
         <div className="header_wrap_right">
+          {/* {!isMobile && <CityBlock />} */}
           <BtnLink
             link={`${isActiveLink('/partners') ? 'https://t.me/sibir_alexandr' : 'https://t.me/Reffection_corp'}`}
             label={'Telegram'}
@@ -253,7 +210,7 @@ function Header({ activeMenu, overflowActiveMenu }) {
             </button>
           )}
         </div>
-        {/* <ModalMenu isOpen={modalIsOpen} onRequestClose={closeModal} /> */}
+        <ModalMenu isOpen={modalIsOpen} onRequestClose={closeModal} />
       </div>
     </header>
   );
